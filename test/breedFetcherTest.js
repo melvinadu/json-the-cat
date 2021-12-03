@@ -18,12 +18,9 @@ describe('fetchBreedDescription', () => {
     });
   });
 
-  it("returns API Error when an invalid/non-existing breed is passed in", (done) => {
+  it("returns \"Please input a breed into the command line\" when an invalid/non-existing breed is passed in", (done) => {
     fetchBreedDescription("Abowa", (error, desc) => {
-      
-      const expectedError = error;
-      
-      assert.equal(expectedError, error);
+      assert.equal(error, "Please input a breed into the command line");
 
       done();
     });
